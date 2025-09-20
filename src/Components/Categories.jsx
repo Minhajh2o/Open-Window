@@ -16,7 +16,7 @@ const Categories = () => {
       <h3 className="text-xl font-bold mb-5">All Categories</h3>
       <div className="flex flex-col gap-2">
         {categories.map((category) => (
-          <NavLink to={`/category/${category.category_id}`} key={category.category_id} className="btn cursor-pointer">
+          <NavLink to={`/category/${category.category_id}`} key={category.category_id} className={({ isActive }) => `btn cursor-pointer text-left ${isActive ? 'bg-gray-300' : ''}`}>
             {category.category_name}
           </NavLink>
         ))}
