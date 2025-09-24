@@ -4,6 +4,8 @@ import News from "../Layouts/News";
 import Auth from "../Layouts/Auth";
 import ErrorPage from "../ErrorPage";
 import NewsCategories from "../Pages/NewsCategories";
+import Login from "../Pages/Login";
+import Registration from "../Pages/Registration";
 
 
 const Router = createBrowserRouter([
@@ -28,6 +30,16 @@ const Router = createBrowserRouter([
   {
     path: "/auth",
     element: <Auth />,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login />,
+      },
+      {
+        path: "/auth/register",
+        element: <Registration />,
+      },
+    ]
   },
   {
     path: "*",

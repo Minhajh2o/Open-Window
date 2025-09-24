@@ -1,12 +1,17 @@
-import React from 'react';
+import Navbar from "../Components/Navbar";
+import { Outlet } from "react-router-dom";
 
 const Auth = () => {
-    return (
-        <div>
-            <h1>Welcome to the Auth Page</h1>
-            <p>This is the auth page content.</p>
-        </div>
-    );
+  return (
+    <div className="bg-gray-200 min-h-screen">
+      <header>
+        <Navbar />
+      </header>
+      <section>
+        <Outlet />
+      </section>
+    </div>
+  );
 };
 
 export default Auth;

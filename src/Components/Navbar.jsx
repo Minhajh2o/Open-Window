@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 mt-5">
+    <div className="navbar">
       <div className="navbar-start"></div>
       <div className="navbar-center flex">
         {/* menu items */}
@@ -52,7 +53,8 @@ const Navbar = () => {
           </ul>
         </div>
         {/* login button */}
-        <a className="btn bg-gray-900 text-base-100">Login</a>
+        <Link to="/auth/login" className="btn bg-gray-900 text-base-100">Login</Link>
+        <Link to="/auth/register" className="btn bg-gray-900 text-base-100">Register</Link>
       </div>
     </div>
   );
