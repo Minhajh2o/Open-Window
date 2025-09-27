@@ -22,7 +22,7 @@ const Registration = () => {
             console.log(createdUser);
             setUser(createdUser);
             alert("User created successfully");
-            form.reset();
+            event.target.reset();
         })
         .catch(error => {
             console.log(error.message, error.code);
