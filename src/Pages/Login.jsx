@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { setUser, login } = useContext(AuthContext);
@@ -18,11 +19,14 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setUser(loggedUser);
-        alert("User logged in successfully");
         event.target.reset();
       })
       .catch((error) => {
         console.log(error.message, error.code);
+        if (error.code === "auth/invalid-credential") {
+          toast.error("Invalid email or password. Please try again.");
+        }
+
       });
   };
 

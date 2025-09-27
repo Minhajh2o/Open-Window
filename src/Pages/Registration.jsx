@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const Registration = () => {
 
@@ -21,11 +22,14 @@ const Registration = () => {
             const createdUser = result.user;
             console.log(createdUser);
             setUser(createdUser);
-            alert("User created successfully");
+            toast.success("User created successfully");
             event.target.reset();
         })
         .catch(error => {
             console.log(error.message, error.code);
+            if(error.code === 'auth/email-already-in-use'){
+              toast.error("User already exists. Please login instead.");
+            }
         })
     }
     
