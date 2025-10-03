@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { toast } from "react-toastify";
 
 const Login = () => {
   const { setUser, login } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,11 +22,12 @@ const Login = () => {
         console.log(loggedUser);
         setUser(loggedUser);
         event.target.reset();
+        navigate(location.state?.from?.pathname || "/", { replace: true });
       })
       .catch((error) => {
         console.log(error.message, error.code);
         if (error.code === "auth/invalid-credential") {
-          toast.error("Invalid email or password. Please try again.");
+          setError("Invalid email or password. Please try again.");
         }
 
       });
@@ -55,6 +58,7 @@ const Login = () => {
               className="input w-full border-0 bg-gray-100"
               placeholder="Enter your password"
             />
+            {error && <p className="text-red-500 mt-2">{error}</p>}
             <div>
               <a className="text-sm link link-hover">Forgot password?</a>
             </div>

@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                src={user?.photoURL ? user.photoURL : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
               />
             </div>
           </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
           </ul>
         </div>
         {/* login button */}
-        {user && <span className="mr-2">Welcome, {user.email}</span>}
+        {user && <span className="mr-2">Welcome, {user.displayName}</span>}
         {user ? (
           <button onClick={logout} className="btn bg-gray-900 text-base-100">
             Logout

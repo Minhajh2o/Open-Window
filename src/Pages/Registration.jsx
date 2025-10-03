@@ -1,38 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 
 const Registration = () => {
+  const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const { createNewUser, setUser } = useContext(AuthContext);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(name, photo, email, password);
+    console.log(Object.fromEntries(form));
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = new FormData(event.target);
-        const name = form.get("name");
-        const photo = form.get("photo");
-        const email = form.get("email");
-        const password = form.get("password");
-        console.log(name, photo, email, password);
-        console.log(Object.fromEntries(form));
+    createNewUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+        // Firebase updates currentUser automatically
+        setUser({ ...createdUser, displayName: name, photoURL: photo });
+        event.target.reset();
+        navigate("/", { replace: true });
+        toast.success("User created successfully");
+      })
+      .catch((error) => {
+        console.log("Error updating profile:", error);
+      });
+  })
+  .catch((error) => {
+        console.log(error.message, error.code);
+        if (error.code === "auth/email-already-in-use") {
+          toast.error("User already exists. Please login instead.");
+        }
+      });
+  };
 
-        createNewUser(email, password)
-        .then(result => {
-            const createdUser = result.user;
-            console.log(createdUser);
-            setUser(createdUser);
-            toast.success("User created successfully");
-            event.target.reset();
-        })
-        .catch(error => {
-            console.log(error.message, error.code);
-            if(error.code === 'auth/email-already-in-use'){
-              toast.error("User already exists. Please login instead.");
-            }
-        })
-    }
-    
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-fit shrink-0 shadow-2xl">

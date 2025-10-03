@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import RightNavBar from "../Components/Layout_Component/RightNavBar";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 const NewsDetails = () => {
@@ -48,8 +48,8 @@ const NewsDetails = () => {
             <div className="card-body">
               <h2 className="card-title">{title}</h2>
               <p>{details}</p>
-              <div className="card-actions justify-start">
-                <button className="btn bg-[#D72050] text-base-100"><FaArrowLeft /> All news in this category</button>
+              <div className="card-actions justify-start mt-4">
+                <Link to={`/category/${news?.category_id}`} className="btn bg-[#D72050] text-base-100"><FaArrowLeft /> All news in this category</Link>
               </div>
             </div>
           </div>
