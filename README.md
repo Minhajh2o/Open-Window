@@ -16,7 +16,23 @@ Live Demo 👉 [Open Window](https://open-window-bcd34.web.app/category/01)
 ---
 
 ## 📂 Project Structure
-<pre> ```bash Open-Window/ ├── public/ # Static assets ├── src/ │ ├── assets/ # Images, icons, etc. │ ├── components/ # Reusable UI components │ ├── layouts/ # Main & Auth layouts │ ├── pages/ # News, Home, Auth pages │ ├── provider/ # AuthProvider for Firebase │ ├── routes/ # React Router configuration │ ├── App.jsx # Root component │ └── main.jsx # Entry point ├── .firebase/ # Firebase config files ├── .gitignore ├── firebase.json # Firebase hosting config ├── package.json # Dependencies & scripts ├── vite.config.js # Vite configuration └── README.md ``` </pre>
+Open-Window/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images, icons, etc.
+│   ├── components/      # Reusable UI components
+│   ├── layouts/         # Main & Auth layouts
+│   ├── pages/           # News, Home, Auth pages
+│   ├── provider/        # AuthProvider for Firebase
+│   ├── routes/          # React Router configuration
+│   ├── App.jsx          # Root component
+│   └── main.jsx         # Entry point
+├── .firebase/           # Firebase config files
+├── .gitignore
+├── firebase.json        # Firebase hosting config
+├── package.json         # Dependencies & scripts
+├── vite.config.js       # Vite configuration
+└── README.md
 
 ---
 
