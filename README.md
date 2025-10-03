@@ -1,12 +1,68 @@
-# React + Vite
+# 📰 Open Window – Online News Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive online news portal built with **React**, **Vite**, **Tailwind CSS**, **DaisyUI**, and **Firebase Authentication**.  
+Live Demo 👉 [Open Window](https://open-window-bcd34.web.app/category/01)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🔐 User Authentication (Firebase)
+- 📑 Category-wise News Listing
+- ⭐ Trending & Featured News
+- 👤 User Profile with Name & Photo
+- 📱 Fully Responsive UI
+- ⚡ Fast development setup with Vite
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+Open-Window/
+├── public/ # Static assets
+├── src/
+│ ├── assets/ # Images, icons, etc.
+│ ├── components/ # Reusable UI components
+│ ├── layouts/ # Main & Auth layouts
+│ ├── pages/ # News, Home, Auth pages
+│ ├── provider/ # AuthProvider for Firebase
+│ ├── routes/ # React Router configuration
+│ ├── App.jsx # Root component
+│ └── main.jsx # Entry point
+├── .firebase/ # Firebase config files
+├── .gitignore
+├── firebase.json # Firebase hosting config
+├── package.json # Dependencies & scripts
+├── vite.config.js # Vite configuration
+└── README.md
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React, Vite, Tailwind CSS, DaisyUI
+- **Auth & Hosting:** Firebase
+- **Routing:** React Router DOM
+- **Icons:** React Icons
+
+---
+
+## 🔧 Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Minhajh2o/Open-Window.git
+   cd Open-Window
+
+2. Install dependencies:
+    ```bash
+    npm install
+
+3. Run the development server:
+    ```bash
+    npm run dev
+
+4. Build for production:
+    ```bash
+    npm run build
+
+---
+
+## 👨‍💻 Author
+Developed by (Minhajh2O)[https://github.com/Minhajh2o]
