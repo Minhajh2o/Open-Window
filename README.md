@@ -16,6 +16,7 @@ Live Demo 👉 [Open Window](https://open-window-bcd34.web.app/category/01)
 ---
 
 ## 📂 Project Structure
+```
 Open-Window/
 ├── public/              # Static assets
 ├── src/
@@ -33,6 +34,7 @@ Open-Window/
 ├── package.json         # Dependencies & scripts
 ├── vite.config.js       # Vite configuration
 └── README.md
+```
 
 ---
 
