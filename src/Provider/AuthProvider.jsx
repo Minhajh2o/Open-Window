@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 
 export const AuthContext = createContext();
+
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
@@ -16,7 +17,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log("AuthProvider user:", user);
+  // console.log("AuthProvider user:", user);
 
   // create new user
   const createNewUser = (email, password) => {
@@ -39,7 +40,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      console.log("Auth state changed:", currentUser);
+      // console.log("Auth state changed:", currentUser);
     });
     return () => unsubscribe();
   }, []);

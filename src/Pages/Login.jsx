@@ -13,13 +13,13 @@ const Login = () => {
     const form = new FormData(event.target);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
-    console.log(Object.fromEntries(form));
+    // console.log(email, password);
+    // console.log(Object.fromEntries(form));
 
     login(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         setUser(loggedUser);
         event.target.reset();
         navigate(location.state?.from?.pathname || "/", { replace: true });

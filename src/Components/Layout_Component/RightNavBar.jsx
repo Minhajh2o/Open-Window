@@ -1,5 +1,6 @@
 import FollowUs from "../FollowUs";
 import LoginOption from "../LoginOption";
+import QZone from "../QZone";
 
 const RightNavBar = () => {
   return (
@@ -11,7 +12,7 @@ const RightNavBar = () => {
         <FollowUs />
       </section>
       <section className="mb-5">
-        {/* Editors Insight */}
+        <QZone />
       </section>
       <section className="mb-5">
         {/* Advertisement */}

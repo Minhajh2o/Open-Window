@@ -13,7 +13,8 @@ const Router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    children: [
+    loader: fetch('https://openapi.programming-hero.com/api/news/category/01'),
+    children: [ 
       {
         path: "",
         element: <Navigate to="/category/01" replace />,
