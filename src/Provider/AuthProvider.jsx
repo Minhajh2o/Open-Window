@@ -3,7 +3,9 @@ import app from "../Firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -12,6 +14,7 @@ export const AuthContext = createContext();
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -45,6 +48,11 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
+  // login using google
+  const googleLogin = () => {
+    signInWithPopup(auth, googleProvider)
+  }
+
   // logout user
   const logout = () => {
     setLoading(true);
@@ -57,6 +65,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     createNewUser,
     login,
+    googleLogin,
     logout,
     loading,
     updateUserProfile,

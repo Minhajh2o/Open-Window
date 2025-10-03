@@ -1,6 +1,6 @@
 # 📰 Open Window – Online News Portal
 
-A responsive online news portal built with **React**, **Vite**, **Tailwind CSS**, **DaisyUI**, and **Firebase Authentication**.  
+Welcome to Open Window, a modern, responsive front-end for a news portal application. This project allows users to browse news articles by category, view detailed articles, and features a clean, user-friendly interface built with **React**, **Vite**, **Tailwind CSS**, **DaisyUI**, and **Firebase Authentication**.  
 Live Demo 👉 [Open Window](https://open-window-bcd34.web.app/category/01)
 
 ---
